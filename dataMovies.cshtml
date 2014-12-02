@@ -7,7 +7,10 @@ var data = db.Query(sqlQ);
 <div id="movieslist">
 <ol>
     @foreach(var row in data) {
-    	<li><a href="#">@row.Name, @row.Category, @row.ReleaseYear</a></li>
+		<li>
+			<a href="EditMovie.cshtml?id=@row.id">@row.Name, @row.Category, @row.ReleaseYear</a>
+			<a href="DeleteMovie.cshtml?id=@row.id">Delete</a>
+		</li>
     }
 </ol>
 
